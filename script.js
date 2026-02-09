@@ -1,7 +1,7 @@
 const CONFIG = {
     dailyGoal: 5,
     daysForLetter: 1,
-    minInterval: 1000 * 60,
+    minInterval: 1000 * 0,
 };
 const LOVE_LETTERS = [
     {
@@ -102,13 +102,12 @@ function addWater() {
     if (appState.currentWater < CONFIG.dailyGoal) {
         appState.currentWater++;
         appState.lastDrinkTime = now;
-
-        // Show love message
-        showFloatingMessage();
-
         if (appState.currentWater === CONFIG.dailyGoal) {
             celebrate();
             checkForNewLetter();
+        } else {
+            // Show cute popup for intermediate steps
+            showEncouragement();
         }
         saveState();
         updateUI();
@@ -134,6 +133,30 @@ const LOCKED_MESSAGES = [
     "È un segreto per il futuro! 🌸 Continua a prenderti cura di te e lo scoprirai.",
     "Un passo alla volta... 👣 Ogni goccia conta verso questo tesoro!"
 ];
+
+const CUTE_PHRASES = [
+    "Meno uno! 💕",
+    "Brava amore, continua così! 🌸",
+    "Stai andando alla grande! ✨",
+    "Idratazione in corso... 💧",
+    "Ti penso sempre! ❤️",
+    "Sei la mia forza! 💪",
+    "Un sorso alla volta! 🌊",
+    "Bellissima e idratata! 💖",
+    "Orgogliosissimo di te! 🥰",
+    "Ogni goccia conta! 💧"
+];
+
+function showEncouragement() {
+    const message = CUTE_PHRASES[Math.floor(Math.random() * CUTE_PHRASES.length)];
+    document.getElementById('letterTitle').textContent = "Bravissima! 💕";
+    document.getElementById('letterContent').textContent = message;
+
+    // Ensure cheat style is removed just in case
+    document.querySelector('.letter').classList.remove('cheat');
+
+    document.getElementById('letterModal').classList.add('active');
+}
 const DRINK_MESSAGES = [
     "Brava amore! 💕", "Sei bellissima ✨", "Ti penso...", "Continua così!",
     "Orgoglioso di te! 💖", "Sei la mia forza!", "Splendida! 🌸", "Ti amo! ❤️",
@@ -167,8 +190,12 @@ function createMilestones() {
         milestone.className = 'milestone';
         const isUnlocked = appState.unlockedLetters.includes(index);
         milestone.classList.add(isUnlocked ? 'unlocked' : 'locked');
+
+        // Force the emojis to be treated as text content clearly
+        const icon = isUnlocked ? '💌' : '🔒';
+
         milestone.innerHTML = `
-            ${isUnlocked ? '💌' : '🔒'}
+            <div style="font-size: 1.8rem;">${icon}</div>
             <div class="milestone-number">${index + 1}</div>
         `;
         if (isUnlocked) {
