@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Il Mio Amore">
+    <link rel="manifest" href="manifest.json">
+    <title>Buon San Valentino Amore Mio</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💘</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background-hearts"></div>
+    <div class="celebration" id="celebration"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Buon San Valentino<br>Amore Mio 💕</h1>
+            <p>Prenditi cura di te stessa,<br>è il regalo più bello che puoi farmi 💖</p>
+        </div>
+        <div class="card water-tracker">
+            <div class="water-display">
+                <span id="currentWater">0</span>
+                <span class="unit">/ <span id="goalWater">5</span> 💧</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="todayGlasses">0</div>
+                    <div class="stat-label">Oggi</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="streakDays">0</div>
+                    <div class="stat-label">Giorni 🔥</div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-add" onclick="addWater()">
+                    <span style="position: relative; z-index: 1;">Bevuto! 💧</span>
+                </button>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-soft); font-style: italic; opacity: 0.8;">
+                * Un click vale un bicchiere d'acqua! 💧<br>
+                Anche se a pranzo o cena bevi di più, ne conta solo uno... furbetta! 😜
+            </p>
+            <div class="reminder" id="reminder" style="display: none;">
+                Ricordati di bere, tesoro! Sono passate 2 ore 💕
+            </div>
+        </div>
+        <div class="card achievements">
+            <h2>Letterine d'Amore</h2>
+            <p style="color: var(--text-soft); margin-bottom: 10px;">Completa l'obiettivo giornaliero per sbloccare ogni
+                lettera 💕</p>
+            <div class="milestone-grid" id="milestones"></div>
+        </div>
+        <div class="reset-container">
+            <button class="btn-reset-global" onclick="resetApp()">
+                Ricomincia da Capo 🔄
+            </button>
+        </div>
+        <div style="text-align: center; margin-top: 10px; opacity: 0.3;">
+            <button onclick="openAdmin()"
+                style="background: none; border: none; color: var(--text-soft); cursor: pointer; text-decoration: underline; font-size: 0.8rem;">Admin</button>
+        </div>
+    </div>
+    <div class="modal" id="letterModal">
+        <div class="letter">
+            <button class="letter-close" onclick="closeLetter()">×</button>
+            <h3 id="letterTitle">Letterina d'Amore</h3>
+            <div class="letter-content" id="letterContent"></div>
+        </div>
+    </div>
+    <div class="modal" id="adminModal">
+        <div class="card" style="max-width: 350px; width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="color: var(--deep-rose);">Pannello Admin 🛠️</h3>
+                <button onclick="closeAdmin()"
+                    style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button class="btn" style="background: var(--lavender-kiss);" onclick="adminFill()">
+                    Riempi Acqua (5/5) 💧
+                </button>
+                <button class="btn" style="background: var(--peach-soft);" onclick="adminAddDay()">
+                    +1 Giorno Successo 📅
+                </button>
+                <button class="btn" style="background: #ffaaaa;" onclick="adminReset()">
+                    Reset Totale ⚠️
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="resetConfirmModal">
+        <div class="card" style="max-width: 350px; width: 100%; text-align: center;">
+            <h3
+                style="color: var(--deep-rose); font-family: 'Pacifico', cursive; font-size: 1.8rem; margin-bottom: 15px;">
+                Sei sicura, amore? 😢</h3>
+            <p style="color: var(--text-soft); margin-bottom: 25px; line-height: 1.5;">Questo cancellerà tutti i
+                progressi e le letterine sbloccate.<br>Vuoi davvero ricominciare da capo?</p>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn"
+                    style="background: white; border: 2px solid var(--val-pink-dark); color: var(--val-pink-dark);"
+                    onclick="closeResetModal()">
+                    No, Annulla 🙅
+                </button>
+                <button class="btn" style="background: var(--val-red); color: white;" onclick="confirmResetApp()">
+                    Sì, Ricomincia 🔄
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
