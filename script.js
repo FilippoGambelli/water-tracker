@@ -162,25 +162,7 @@ function showEncouragement() {
 
     document.getElementById('letterModal').classList.add('active');
 }
-const DRINK_MESSAGES = [
-    "Brava amore! 💕", "Sei bellissima ✨", "Ti penso...", "Continua così!",
-    "Orgoglioso di te! 💖", "Sei la mia forza!", "Splendida! 🌸", "Ti amo! ❤️",
-    "Sei speciale! 🌟", "Bravissima! 👏"
-];
-function showFloatingMessage() {
-    const message = DRINK_MESSAGES[Math.floor(Math.random() * DRINK_MESSAGES.length)];
-    const el = document.createElement('div');
-    el.className = 'floating-message';
-    el.textContent = message;
-    // Position randomly near center/top
-    el.style.left = (Math.random() * 60 + 20) + '%';
-    document.body.appendChild(el);
 
-    // Remove after animation
-    setTimeout(() => {
-        el.remove();
-    }, 2500);
-}
 function showLockedMessage() {
     const message = LOCKED_MESSAGES[Math.floor(Math.random() * LOCKED_MESSAGES.length)];
     document.getElementById('letterTitle').textContent = "Pazienza, Tesoro! 💕";
@@ -196,11 +178,8 @@ function createMilestones() {
         const isUnlocked = appState.unlockedLetters.includes(index);
         milestone.classList.add(isUnlocked ? 'unlocked' : 'locked');
 
-        // Force the emojis to be treated as text content clearly
-        const icon = isUnlocked ? '💌' : '🔒';
-
         milestone.innerHTML = `
-            <div style="font-size: 1.8rem;">${icon}</div>
+            <span style="font-size: 1.8rem;">${isUnlocked ? '💌' : '🔒'}</span>
             <div class="milestone-number">${index + 1}</div>
         `;
         if (isUnlocked) {
