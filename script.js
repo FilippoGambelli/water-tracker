@@ -135,17 +135,22 @@ const LOCKED_MESSAGES = [
 ];
 
 const CUTE_PHRASES = [
-    "Meno uno! 💕",
     "Brava amore, continua così! 🌸",
     "Stai andando alla grande! ✨",
-    "Idratazione in corso... 💧",
     "Ti penso sempre! ❤️",
     "Sei la mia forza! 💪",
     "Un sorso alla volta! 🌊",
     "Bellissima e idratata! 💖",
     "Orgogliosissimo di te! 🥰",
-    "Ogni goccia conta! 💧"
+    "Così mi fai innamorare! 😘",
+    "Acqua + te = perfezione 💎",
+    "Mi rendi fiero ogni giorno 💕",
+    "La mia persona preferita 💖",
+    "Piccoli gesti, grandi risultati 🌱",
+    "Il tuo corpo ti ringrazia 🫶",
+    "Continua così, amore mio 💞"
 ];
+
 
 function showEncouragement() {
     const message = CUTE_PHRASES[Math.floor(Math.random() * CUTE_PHRASES.length)];
@@ -270,42 +275,7 @@ document.getElementById('letterModal').addEventListener('click', (e) => {
         closeLetter();
     }
 });
-function openAdmin() {
-    const password = prompt("Inserisci password Admin:");
-    if (password === "1234") {
-        document.getElementById('adminModal').classList.add('active');
-    } else if (password !== null) {
-        alert("Password errata! 🚫");
-    }
-}
-function closeAdmin() {
-    document.getElementById('adminModal').classList.remove('active');
-}
-function adminFill() {
-    appState.currentWater = CONFIG.dailyGoal;
-    appState.lastDrinkTime = Date.now();
-    saveState();
-    updateUI();
-    celebrate();
-}
-function adminAddDay() {
-    appState.successfulDays++;
-    appState.streak++;
-    saveState();
-    updateUI();
-    checkForNewLetter();
-}
-function adminReset() {
-    if (confirm("⚠️ SEI SICURO? Questo cancellerà TUTTI i dati e progressi!")) {
-        localStorage.removeItem('waterLoveTracker');
-        location.reload();
-    }
-}
-document.getElementById('adminModal').addEventListener('click', (e) => {
-    if (e.target.id === 'adminModal') {
-        closeAdmin();
-    }
-});
+
 
 // --- SOS COCCOLE ---
 const HUG_MESSAGES = [
