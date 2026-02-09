@@ -205,16 +205,7 @@ function showCheatLetter() {
     document.getElementById('letterContent').textContent = "Ehi! Non provare a fregarmi aggiungendo acqua a caso... L'ho capito che vuoi solo leggere le lettere! Bevi davvero e torna tra poco. L'amore richiede pazienza! ❤️";
     document.getElementById('letterModal').classList.add('active');
 }
-function resetApp() {
-    document.getElementById('resetConfirmModal').classList.add('active');
-}
-function closeResetModal() {
-    document.getElementById('resetConfirmModal').classList.remove('active');
-}
-function confirmResetApp() {
-    localStorage.removeItem('waterLoveTracker');
-    location.reload();
-}
+
 function closeLetter() {
     document.getElementById('letterModal').classList.remove('active');
     setTimeout(() => {
@@ -288,11 +279,7 @@ document.getElementById('adminModal').addEventListener('click', (e) => {
         closeAdmin();
     }
 });
-document.getElementById('resetConfirmModal').addEventListener('click', (e) => {
-    if (e.target.id === 'resetConfirmModal') {
-        closeResetModal();
-    }
-});
+
 // --- SOS COCCOLE ---
 const HUG_MESSAGES = [
     "Ti stritolo forte forte! 🤗",

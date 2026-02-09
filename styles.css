@@ -853,6 +853,43 @@ body {
     50% {
         transform: scale(1.2) rotate(5deg);
     }
+}
 
-    /* Hug effect */
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .floating-message {
+        font-size: 1.5rem;
+        /* Force center alignment on mobile to avoid overflow */
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        white-space: normal;
+        /* Allow wrap if needed */
+        line-height: 1.2;
+    }
+
+    .btn-sos {
+        bottom: 25px;
+        /* Safe distance */
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        /* Ensure it's above everything */
+        z-index: 2000;
+    }
+
+    .hug-emoji {
+        font-size: 6rem;
+    }
+
+    .hug-content p {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+
+    .container {
+        padding-bottom: 80px;
+        /* Space for FAB */
+    }
 }
