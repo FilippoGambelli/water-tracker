@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
+
 :root {
     --val-red: #E63946;
     --val-pink-dark: #FF4D6D;
@@ -20,6 +22,7 @@
     --purple-heart: var(--val-pink-dark);
     --gold-shimmer: var(--val-gold);
 }
+
 body {
     font-family: 'Quicksand', sans-serif;
     background: linear-gradient(135deg, #FFF0F3 0%, #FFE5EC 50%, #E2C6F0 100%);
@@ -28,6 +31,7 @@ body {
     position: relative;
     overflow-x: hidden;
 }
+
 #background-hearts {
     position: fixed;
     top: 0;
@@ -38,20 +42,24 @@ body {
     z-index: -1;
     overflow: hidden;
 }
+
 .floating-heart {
     position: absolute;
     opacity: 0.15;
     animation: drift 20s linear infinite;
     font-size: 2rem;
 }
+
 @keyframes drift {
     0% {
         transform: translateY(110vh) rotate(0deg) translateX(0);
     }
+
     100% {
         transform: translateY(-10vh) rotate(360deg) translateX(50px);
     }
 }
+
 .container {
     max-width: 480px;
     margin: 0 auto;
@@ -59,21 +67,25 @@ body {
     position: relative;
     z-index: 1;
 }
+
 .header {
     text-align: center;
     margin-bottom: 30px;
     animation: slideDown 0.8s ease-out;
 }
+
 @keyframes slideDown {
     from {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .header h1 {
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
@@ -86,11 +98,13 @@ body {
     letter-spacing: 1px;
     text-align: center;
 }
+
 .header p {
     color: var(--text-soft);
     font-size: 1.1rem;
     font-weight: 500;
 }
+
 .card {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
@@ -104,6 +118,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .card::before {
     content: '';
     position: absolute;
@@ -115,28 +130,35 @@ body {
     opacity: 0.3;
     pointer-events: none;
 }
+
 .card:nth-child(2) {
     animation-delay: 0.1s;
 }
+
 .card:nth-child(3) {
     animation-delay: 0.2s;
 }
+
 .card:nth-child(4) {
     animation-delay: 0.3s;
 }
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .water-tracker {
     text-align: center;
 }
+
 .water-display {
     font-size: 5rem;
     margin: 20px 0;
@@ -147,10 +169,12 @@ body {
     filter: drop-shadow(0 4px 6px rgba(255, 77, 109, 0.3));
     font-weight: 800;
 }
+
 .water-display .unit {
     font-size: 1.5rem;
     color: var(--text-soft);
 }
+
 .progress-bar {
     height: 25px;
     background: rgba(255, 255, 255, 0.5);
@@ -161,6 +185,7 @@ body {
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.8);
 }
+
 .progress-fill {
     height: 100%;
     background: linear-gradient(90deg, #FFC4D6, #FF87AB, #FF5D8F);
@@ -169,6 +194,7 @@ body {
     position: relative;
     box-shadow: 0 0 15px rgba(255, 93, 143, 0.4);
 }
+
 .progress-fill::after {
     content: '';
     position: absolute;
@@ -179,19 +205,23 @@ body {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: shimmer 2s infinite;
 }
+
 @keyframes shimmer {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
 }
+
 .buttons {
     display: flex;
     gap: 15px;
     margin-top: 25px;
 }
+
 .btn {
     flex: 1;
     padding: 18px;
@@ -208,6 +238,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .btn::before {
     content: '';
     position: absolute;
@@ -220,38 +251,46 @@ body {
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
+
 .btn:active::before {
     width: 300px;
     height: 300px;
 }
+
 .btn-add {
     background: linear-gradient(135deg, #FF4D6D, #D00000);
     color: white;
     box-shadow: 0 10px 25px rgba(230, 57, 70, 0.4);
 }
+
 .btn-add:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 30px rgba(230, 57, 70, 0.5);
 }
+
 .btn-add:active {
     transform: scale(0.95);
     box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
 }
+
 .achievements {
     text-align: center;
 }
+
 .achievements h2 {
     font-family: 'Pacifico', cursive;
     color: var(--purple-heart);
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
+
 .milestone-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
 }
+
 .milestone:last-child {
     grid-column: 1 / -1;
     aspect-ratio: 2 / 1;
@@ -264,6 +303,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .milestone:last-child.locked::after {
     content: '👑';
     position: absolute;
@@ -273,6 +313,7 @@ body {
     font-size: 1.5rem;
     opacity: 0.5;
 }
+
 .milestone:last-child .milestone-number {
     font-size: 1.2rem;
     color: white;
@@ -281,6 +322,7 @@ body {
     position: absolute;
     bottom: 10px;
 }
+
 .milestone:last-child.locked {
     background: rgba(255, 255, 255, 0.9);
     border-color: var(--val-gold);
@@ -288,6 +330,7 @@ body {
     filter: none;
     opacity: 0.6;
 }
+
 .milestone:last-child.unlocked {
     background: linear-gradient(135deg, #FF0054, #FF5D8F, #FFD700);
     border: none;
@@ -295,20 +338,24 @@ body {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 @keyframes pulseGold {
     0% {
         transform: scale(1);
         box-shadow: 0 8px 20px rgba(255, 77, 109, 0.5);
     }
+
     50% {
         transform: scale(1.03);
         box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 8px 20px rgba(255, 77, 109, 0.5);
     }
 }
+
 .milestone {
     aspect-ratio: 1;
     border-radius: 20px 20px 20px 5px;
@@ -323,6 +370,7 @@ body {
     cursor: pointer;
     border: 3px solid transparent;
 }
+
 .milestone.locked {
     background: rgba(255, 255, 255, 0.5);
     border: 2px dashed var(--val-pink-light);
@@ -331,12 +379,14 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
 .milestone.locked:hover {
     transform: scale(1.1) rotate(-5deg);
     opacity: 1;
     background: rgba(255, 255, 255, 0.8);
     border-color: var(--val-pink-dark);
 }
+
 .milestone.unlocked {
     background: linear-gradient(135deg, var(--val-red), var(--val-pink-dark));
     color: white;
@@ -344,33 +394,40 @@ body {
     animation: unlockPop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border: none;
 }
+
 .milestone.unlocked:hover {
     transform: scale(1.15) rotate(5deg);
     box-shadow: 0 12px 30px rgba(255, 77, 109, 0.6);
 }
+
 .milestone.unlocked .milestone-number {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 700;
 }
+
 @keyframes unlockPop {
     0% {
         transform: scale(0) rotate(0deg);
         opacity: 0;
     }
+
     50% {
         transform: scale(1.2) rotate(180deg);
     }
+
     100% {
         transform: scale(1) rotate(360deg);
         opacity: 1;
     }
 }
+
 .milestone-number {
     font-size: 0.7rem;
     color: var(--text-soft);
     font-weight: 600;
     margin-top: 5px;
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -385,18 +442,22 @@ body {
     padding: 20px;
     backdrop-filter: blur(5px);
 }
+
 .modal.active {
     display: flex;
     animation: fadeIn 0.3s ease;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
+
 .letter {
     background: linear-gradient(135deg, #FFF9F3, #FFF0F5);
     background-color: #FFF9F3;
@@ -413,35 +474,42 @@ body {
     scrollbar-width: thin;
     scrollbar-color: var(--val-pink-light) rgba(255, 230, 230, 0.4);
 }
+
 .letter::-webkit-scrollbar {
     width: 10px;
 }
+
 .letter::-webkit-scrollbar-track {
     background: rgba(255, 230, 230, 0.4);
     border-radius: 10px;
     margin: 20px 0;
 }
+
 .letter::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, var(--val-pink-light), var(--val-pink-dark));
     border-radius: 20px;
     border: 2px solid transparent;
     background-clip: content-box;
 }
+
 .letter::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, var(--val-red), var(--deep-rose));
     border: 2px solid transparent;
     background-clip: content-box;
 }
+
 @keyframes letterSlide {
     from {
         transform: translateY(-100px) rotate(-10deg);
         opacity: 0;
     }
+
     to {
         transform: translateY(0) rotate(0);
         opacity: 1;
     }
 }
+
 .letter::before {
     content: '💌';
     position: absolute;
@@ -452,15 +520,19 @@ body {
     animation: bounce 1s infinite;
     z-index: 2;
 }
+
 @keyframes bounce {
+
     0%,
     100% {
         transform: translateX(-50%) translateY(0);
     }
+
     50% {
         transform: translateX(-50%) translateY(-10px);
     }
 }
+
 .letter-close {
     position: absolute;
     top: 15px;
@@ -479,10 +551,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .letter-close:hover {
     transform: rotate(90deg);
     background: var(--purple-heart);
 }
+
 .letter h3 {
     font-family: 'Pacifico', cursive;
     color: var(--deep-rose);
@@ -491,6 +565,7 @@ body {
     text-align: center;
     margin-top: 10px;
 }
+
 .letter-content {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -499,28 +574,33 @@ body {
     font-weight: 500;
     white-space: pre-wrap;
 }
+
 .stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-top: 20px;
 }
+
 .stat-item {
     text-align: center;
     padding: 15px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
 }
+
 .stat-value {
     font-size: 2rem;
     font-weight: 700;
     color: var(--deep-rose);
 }
+
 .stat-label {
     font-size: 0.9rem;
     color: var(--text-soft);
     margin-top: 5px;
 }
+
 .celebration {
     position: fixed;
     top: 0;
@@ -530,21 +610,25 @@ body {
     pointer-events: none;
     z-index: 999;
 }
+
 .heart {
     position: absolute;
     font-size: 2rem;
     animation: rise 3s ease-out forwards;
 }
+
 @keyframes rise {
     0% {
         opacity: 1;
         transform: translateY(0) rotate(0deg);
     }
+
     100% {
         opacity: 0;
         transform: translateY(-300px) rotate(360deg);
     }
 }
+
 .reminder {
     background: linear-gradient(135deg, rgba(255, 235, 205, 0.8), rgba(255, 250, 240, 0.8));
     border-left: 5px solid var(--gold-shimmer);
@@ -557,15 +641,18 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .reminder::before {
     content: '⏰';
     font-size: 1.5rem;
 }
+
 .reset-container {
     text-align: center;
     margin-top: 40px;
     padding-bottom: 20px;
 }
+
 .btn-reset-global {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
@@ -583,6 +670,7 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .btn-reset-global:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 12px 25px rgba(255, 93, 143, 0.3);
@@ -590,33 +678,181 @@ body {
     color: var(--val-red);
     border-color: var(--val-red);
 }
+
 .btn-reset-global:active {
     transform: scale(0.95);
 }
+
 .letter.cheat {
     background: linear-gradient(135deg, #FFF0F3, #FFE5EC) !important;
     border: 3px dashed var(--val-pink-dark) !important;
     box-shadow: 0 20px 60px rgba(255, 77, 109, 0.2);
     color: var(--text-main);
 }
+
 .letter.cheat h3 {
     color: #FF4D6D !important;
 }
+
 .letter.cheat::before {
     content: '😜' !important;
     animation: shake 0.5s infinite;
 }
+
 @keyframes shake {
     0% {
         transform: translateX(-50%) rotate(0deg);
     }
+
     25% {
         transform: translateX(-55%) rotate(-5deg);
     }
+
     75% {
         transform: translateX(-45%) rotate(5deg);
     }
+
     100% {
         transform: translateX(-50%) rotate(0deg);
     }
+}
+
+/* Floating Love Messages */
+.floating-message {
+    position: fixed;
+    top: 60%;
+    /* Start slightly below center */
+    transform: translate(-50%, -50%);
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: var(--val-red);
+    text-shadow: 2px 2px 0 #FFF, -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+    pointer-events: none;
+    z-index: 2000;
+    animation: floatUpMessage 2.5s ease-out forwards;
+    white-space: nowrap;
+}
+
+@keyframes floatUpMessage {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0) scale(0.5) rotate(-5deg);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -50px) scale(1.2) rotate(5deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -200px) scale(1) rotate(0deg);
+    }
+}
+
+/* SOS Coccole Feature */
+.btn-sos {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #FF99AC, #FF5D8F);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(255, 93, 143, 0.4);
+    z-index: 900;
+    transition: all 0.3s ease;
+    animation: gentlePulse 3s infinite;
+}
+
+.btn-sos:hover {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 15px 35px rgba(255, 93, 143, 0.6);
+}
+
+@keyframes gentlePulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hug-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 240, 245, 0.95);
+    /* Opaque soft pink */
+    z-index: 2100;
+    /* Top level */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease;
+    cursor: pointer;
+}
+
+.hug-modal.active {
+    display: flex;
+}
+
+.hug-content {
+    text-align: center;
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hug-emoji {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    animation: hugSqueeze 2s infinite ease-in-out;
+}
+
+.hug-content p {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: var(--val-pink-dark);
+    text-shadow: 2px 2px 0 white;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes hugSqueeze {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    /* Hug effect */
 }

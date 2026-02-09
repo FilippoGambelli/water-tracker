@@ -102,6 +102,10 @@ function addWater() {
     if (appState.currentWater < CONFIG.dailyGoal) {
         appState.currentWater++;
         appState.lastDrinkTime = now;
+
+        // Show love message
+        showFloatingMessage();
+
         if (appState.currentWater === CONFIG.dailyGoal) {
             celebrate();
             checkForNewLetter();
@@ -130,6 +134,25 @@ const LOCKED_MESSAGES = [
     "È un segreto per il futuro! 🌸 Continua a prenderti cura di te e lo scoprirai.",
     "Un passo alla volta... 👣 Ogni goccia conta verso questo tesoro!"
 ];
+const DRINK_MESSAGES = [
+    "Brava amore! 💕", "Sei bellissima ✨", "Ti penso...", "Continua così!",
+    "Orgoglioso di te! 💖", "Sei la mia forza!", "Splendida! 🌸", "Ti amo! ❤️",
+    "Sei speciale! 🌟", "Bravissima! 👏"
+];
+function showFloatingMessage() {
+    const message = DRINK_MESSAGES[Math.floor(Math.random() * DRINK_MESSAGES.length)];
+    const el = document.createElement('div');
+    el.className = 'floating-message';
+    el.textContent = message;
+    // Position randomly near center/top
+    el.style.left = (Math.random() * 60 + 20) + '%';
+    document.body.appendChild(el);
+
+    // Remove after animation
+    setTimeout(() => {
+        el.remove();
+    }, 2500);
+}
 function showLockedMessage() {
     const message = LOCKED_MESSAGES[Math.floor(Math.random() * LOCKED_MESSAGES.length)];
     document.getElementById('letterTitle').textContent = "Pazienza, Tesoro! 💕";
@@ -270,4 +293,32 @@ document.getElementById('resetConfirmModal').addEventListener('click', (e) => {
         closeResetModal();
     }
 });
+// --- SOS COCCOLE ---
+const HUG_MESSAGES = [
+    "Ti stritolo forte forte! 🤗",
+    "Sono qui con te, piccola! 🧸",
+    "Un abbraccio gigante tutto per te! 💖",
+    "Ti amo tantissimo!❤️"
+];
+
+function showHug() {
+    const modal = document.getElementById('hugModal');
+    const textEl = document.getElementById('hugText');
+
+    // Pick random message
+    textEl.innerHTML = HUG_MESSAGES[Math.floor(Math.random() * HUG_MESSAGES.length)].replace('\n', '<br>');
+
+    modal.classList.add('active');
+
+    // Optional: Vibration if mobile
+    if (navigator.vibrate) {
+        navigator.vibrate([200, 100, 200]);
+    }
+}
+
+function closeHug() {
+    document.getElementById('hugModal').classList.remove('active');
+}
+
+// --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', init);
