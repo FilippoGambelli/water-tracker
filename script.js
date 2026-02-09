@@ -1,7 +1,7 @@
 const CONFIG = {
     dailyGoal: 5,
     daysForLetter: 1,
-    minInterval: 1000 * 0,
+    minInterval: 1000 * 30,
 };
 const LOVE_LETTERS = [
     {
