@@ -6,7 +6,7 @@ const CONFIG = {
 const LOVE_LETTERS = [
     {
         title: "Per Noi 💌",
-        content: "Piccola mia, so che probabilmente a San Valentino non riusciremo a vederci e questa cosa un po' mi pesa. Proprio per questo ho pensato a questo regalino, così da tenerti compagnia nei giorni che mancano e farti sentire quanto ti penso. Dimmi la verità: come sta andando? Stai fregando oppure no? Birichina!! 💕"
+        content: "Piccola mia, so che probabilmente a San Valentino non riusciremo a vederci e questa cosa un po' mi pesa. Proprio per questo ho pensato a questo regalino, così da tenerti compagnia nei giorni che mancano e farti sentire quanto ti penso. Come è andato questo primo giorno? Stai bevendo oppure freghi? Birichina!! 💕"
     },
     {
         title: "Sempre Nei Miei Pensieri 💕",
@@ -14,7 +14,7 @@ const LOVE_LETTERS = [
     },
     {
         title: "Orgoglioso di Te ✨",
-        content: "Principessa, sono davvero contento di come stai affrontando tesi e tirocinio. Si vede tantissimo quanto sei cresciuta e quanto hai imparato a stare nel lavoro e vederti così appassionata a quello che studi è una cosa bellissima. A proposito, come va con il bere? Hai bisogno di un aiutino? In ogni caso spero che ti stia aiutano a bere un pochettino di più. Ti amo! 🤍"
+        content: "Principessa, sono davvero contento di come stai affrontando tesi e tirocinio. Si vede tantissimo quanto sei cresciuta e vederti così appassionata a quello che studi è una cosa bellissima. A proposito, come va con il bere? Spero che questa cosina ti stia aiutando a bere un pochettino di più. Ti amo! 🤍"
     },
     {
         title: "Io Ci Sono 💞",
@@ -23,12 +23,12 @@ const LOVE_LETTERS = [
     {
         title: "Buon San Valentino 🤍",
         content: `Orco muscoloso 🤍,
-Nelle ultime settimane ho ripensato tanto a questo periodo e non ho potuto fare a meno di notare lo spirito e la forza che metti in tutto quello che fai, anche quando le cose non sono semplici. Vedo chiaramente quanto tu sia cresciuta rispetto a qualche anno fa: oggi ti abbatti con molta meno facilità e, piano piano, stai imparando a pensare sempre di più per te stessa, senza farti giudicare o ferire dalla prima cosa che gli altri dicono. Questa tua forza silenziosa mi colpisce ogni giorno. Forse non riesco sempre a fartelo percepire come vorrei, ma sono davvero e genuinamente contento del percorso che stai facendo, e spero con tutto il cuore che questo sia solo l'inizio.
-Nel nostro rapporto sento che siamo cresciuti tanto, soprattutto nella comunicazione e nella comprensione reciproca. Riusciamo a parlare meglio, anche quando la pensiamo in modo diverso, senza cercare di convincerci a vicenda o di arrabbiarci, ma semplicemente confrontandoci. E poi mi piace tantissimo vedere come riesci a stare al gioco anche con le battute, senza però perdere la profondità quando servono discorsi seri: è un equilibrio bellissimo, e lo stiamo costruendo insieme.
-So che in questo periodo, come purtroppo è già successo in passato, riusciamo a vederci poco a causa di impegni che non possiamo evitare. Capisco che a volte tu possa pensare che io non abbia voglia di vederti, ma voglio che tu sappia che non è assolutamente così. Ti penso davvero sempre, anche quando non riesco a fartelo percepire come vorrei perché sono sommerso dallo studio, dalle chiamate e dalle mille cose da fare. Se a volte i messaggini sono pochi, sappi che non è mancanza di amore, ma solo il tentativo — un po’ goffo — di fare il massimo per tutto e per tutti.
+Nelle ultime settimane ho ripensato tanto a questo periodo e non ho potuto fare a meno di notare lo spirito e la forza che metti in tutto quello che fai, anche quando le cose non sono semplici. Vedo chiaramente quanto tu sia cresciuta rispetto a qualche anno fa: oggi ti abbatti con molta meno facilità e, piano piano, stai imparando a pensare sempre di più per te stessa, senza farti giudicare o ferire dalla prima cosa che gli altri dicono. Forse non riesco sempre a fartelo percepire come vorrei, ma sono davvero e genuinamente contento del percorso che stai facendo, e spero con tutto il cuore che questo sia solo l'inizio.
+Nel nostro rapporto sento che siamo cresciuti tanto, soprattutto nella comunicazione e nella comprensione reciproca. Riusciamo a parlare meglio, anche quando la pensiamo in modo diverso, senza cercare di convincerci a vicenda o di arrabbiarci, ma semplicemente confrontandoci. Mi piace vedere come riesci a stare al gioco, quando scherzo, senza però perdere la profondità quando servono discorsi seri: è un equilibrio bellissimo, e lo stiamo costruendo insieme.
+So che in questo periodo, come purtroppo è già successo in passato, riusciamo a vederci poco a causa di impegni che non possiamo evitare. Capisco che a volte tu possa pensare che io non abbia voglia di vederti, ma voglio che tu sappia che non è assolutamente così. Ti penso davvero sempre, anche quando non riesco a fartelo percepire come vorrei perché sono sommerso dallo studio, dalle chiamate e dalle mille cose da fare. Se a volte i messaggini sono pochi, sappi che non è mancanza di amore, ma solo il tentativo, un po' goffo, di fare il massimo per tutto e per tutti.
 Quando non riusciamo a vederci, mi manchi tu. Sembra banale, ma è proprio così: mi manca il tuo modo di fare, di scherzare, di parlare, di raccontarmi la tua giornata e vederti fiera di quello che stai facendo. È davvero bello percepire quanto ti stia piacendo quello che stai studiando e quanto tu sia coinvolta nella preparazione della tesi.
 Guardando avanti, senza fare grandi promesse, io mi immagino semplicemente noi due insieme. Non vedo l'ora di convivere, di passare più tempo insieme, cucinare, guardare la TV sul divano, ridere e scherzare. Sapere che a casa ho una persona che mi ama, prepararti le cose quando vai a lavoro, aspettarti anche quando fai tardi… sì, è proprio questo che voglio, ed è questo che mi rende felice.
-E poi questa piccola sfida dell'acqua: spero che ti abbia fatto sorridere, che ti sia divertita e che, anche solo un po', ti abbia aiutata a bere di più. Non è solo acqua, è un modo per ricordarti di prenderti cura di te, perché te lo meriti davvero.
+E poi questa piccola sfida dell'acqua: spero che ti abbia fatto sorridere, che ti sia divertita e che, anche solo un po', ti abbia aiutata a bere di più. Non è solo il bere, ma un modo per ricordarti di prenderti cura di te, perché te lo meriti davvero.
 Piccola mia, ricordati sempre che io ci sono.
 Ti amo per quello che sei, per quello che stai diventando e per tutto quello che costruiremo insieme, un sorso alla volta, una giornata alla volta 🤍`
     }
